@@ -1,0 +1,41 @@
+.App {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 20px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin: 10px 0 5px;
+}
+
+textarea, input {
+  padding: 10px;
+  font-size: 16px;
+  margin: 5px 0 15px;
+  width: 300px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+pre {
+  background-color: #f4f4f4;
+  padding: 10px;
+  white-space: pre-wrap;
+  text-align: left;
+  margin: 0 auto;
+  width: 80%;
+  border: 1px solid #ddd;
+}
