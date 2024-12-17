@@ -11,7 +11,7 @@ function App() {
     e.preventDefault();
 
     try {
-      const res = await fetch('http://20.51.242.55:5000/paraphrase', {
+      const res = await fetch('https://20.51.242.55:5000/paraphrase', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
