@@ -5,11 +5,12 @@ function App() {
   const [inputText, setInputText] = useState(''); // User input
   const [lexDiversity, setLexDiversity] = useState(50); // Lexical diversity
   const [orderDiversity, setOrderDiversity] = useState(50); // Order diversity
+  const [isLoading, setIsLoading] = useState(false)
   const [response, setResponse] = useState(''); // API response
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setIsLoading(true);
     try {
       const res = await fetch('https://rewritebackend.com/paraphrase', {
         method: 'POST',
@@ -26,6 +27,8 @@ function App() {
     } catch (error) {
       console.error('Error:', error);
       setResponse('Failed to fetch response. Please try again.');
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -67,8 +70,16 @@ function App() {
       </form>
 
       <div>
-        <h2>Paraphrased Output:</h2>
-        <pre>{response}</pre>
+        {/* <h2>Paraphrased Output:</h2>
+        <pre>{response}</pre> */}
+        {isLoading && (
+          <div className="loading-screen">
+            <div className="spinner"></div>
+            <p>Loading...</p>
+          </div>
+        )}
+        <pre>{response && !isLoading && <div className="response">Result: {response}</div>}</pre>
+        
       </div>
     </div>
   );
