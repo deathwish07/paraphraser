@@ -14,6 +14,7 @@ function App() {
     try {
       const res = await fetch('https://rewritebackend.com/paraphrase', {
         method: 'POST',
+        mode: "no-cors",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           text: inputText,
