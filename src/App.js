@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 
+
 function App() {
   const [inputText, setInputText] = useState(''); // User input
   const [lexDiversity, setLexDiversity] = useState(50); // Lexical diversity
@@ -14,7 +15,7 @@ function App() {
     try {
       const res = await fetch('https://rewritebackend.com/paraphrase', {
         method: 'POST',
-        mode: "no-cors",
+        
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           text: inputText,
@@ -80,7 +81,7 @@ function App() {
           </div>
         )}
         <pre>{response && !isLoading && <div className="response">Result: {response}</div>}</pre>
-        
+
       </div>
     </div>
   );
